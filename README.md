@@ -1,23 +1,46 @@
-# Efficient counting of permutation patterns via double posets: `dp_count_patterns.py`
+# Efficient Counting of Permutation Patterns via Double Posets
 
-## Overview
-This document explains the purpose of `dp_count_patterns.py`.  
+`dp_count_patterns.py` provides tools for efficiently counting permutation patterns using **double posets** and **corner trees**. Precomputed profiles (`profile_2.pkl` to `profile_5.pkl`) store basis expansions for patterns of various orders.
 
-- `profile_2.pkl` contains the basis expansion of patterns of order 2 using corner trees up to two vertices
+---
 
-- `profile_3.pkl` contains the basis expansion of patterns of order 2 and order 3 using corner trees up to three vertices
+## Profiles
 
-- `profile_4.pkl` contains the basis expansion of patterns of order 2, order 3, and order 4 using corner trees up to four vertices and the pattern 3214
+- **`profile_2.pkl`**  
+  Basis expansions of patterns of **order 2**, using corner trees with up to **2 vertices**.
 
-- `profile_5.pkl` contains the basis expansion of patterns of order 2, order 3, order 4, and order 5 using corner trees up to five vertices, the pattern 3214, the twelve double posets countable in \tilde{O}(n^{5/3}) and the patterns: 12435, 12453, 13245, 13254, 13425, 14235, 14325, 14352.
+- **`profile_3.pkl`**  
+  Basis expansions of patterns of **order 2 and 3**, using corner trees with up to **3 vertices**.
 
-- `new_directions()` yields the three double posets in Tree_{5/3} that can be counted in \tilde{O}(n^{5/3}) time together with the double posets obtained by letting D_{4} acting on them. This yields the 12 double posets that can be counted in \tilde{O}(n^{5/3}). The function actually outputs the underlying pure west corner trees.
+- **`profile_4.pkl`**  
+  Basis expansions of patterns of **order 2, 3, and 4**, using corner trees with up to **4 vertices**, plus the pattern `3214`.
 
-- `profile_level_two_with_ct` computes the 2 profile of a permutation of length n in \tilde{O}(n) time
+- **`profile_5.pkl`**  
+  Basis expansions of patterns of **order 2, 3, 4, and 5**, using corner trees with up to **5 vertices**, plus:  
+  - Pattern `3214`  
+  - Twelve double posets countable in \(\tilde{O}(n^{5/3})\)  
+  - Additional patterns: `12435, 12453, 13245, 13254, 13425, 14235, 14325, 14352`  
 
-- `profile_level_three_with_ct` computes the 3 profile of a permutation of length n in \tilde{O}(n) time
+> **Note:** Level 5 patterns are included **only for sanity checks**. The computation is **not efficient** (O(n⁵)) and is used to verify that all directions at level 5 can be spanned.
 
-- `profile_level_four_with_ct` computes the 4 profile of a permutation of length n in \tilde{O}(n^{5/3}) time
+---
 
-- `profile_level_five_with_dp(perm, only_5=True)` computes the 5 profile of a permutation of length n in O(n^{5}) time. It is not efficient. it is just a sanity check that we can span all directions at level five
+## Functions
 
+- **`new_directions()`**  
+  Returns the three double posets in `Tree_{5/3}` that can be counted in \(\tilde{O}(n^{5/3})\), along with all double posets obtained by the action of \(D_4\). Outputs the **underlying pure west corner trees**.
+
+- **`profile_level_two_with_ct(perm)`**  
+  Computes the **2-profile** of a permutation of length n in \(\tilde{O}(n)\) time.
+
+- **`profile_level_three_with_ct(perm)`**  
+  Computes the **3-profile** of a permutation of length n in \(\tilde{O}(n)\) time.
+
+- **`profile_level_four_with_ct(perm)`**  
+  Computes the **4-profile** of a permutation of length n in \(\tilde{O}(n^{5/3})\) time.
+
+- **`profile_level_five_with_dp(perm, only_5=True)`**  
+  Computes the **5-profile** of a permutation of length n in **O(n⁵)** time.  
+  > ⚠️ **Warning:** This function is **intentionally inefficient** and is meant only as a **sanity check** for spanning all directions at level 5.
+
+---
