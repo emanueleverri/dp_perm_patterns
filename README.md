@@ -23,7 +23,7 @@ See the underlying paper for details: [*Efficient Counting of Permutation Patter
   - Twelve double posets countable in $\tilde{O}(n^{5/3})$ – these correspond to the three double posets in $\text{Tree}_{5/3}$ that can be counted in $\tilde{O}(n^{5/3})$, together with all double posets obtained by the action of $D_4$.  
   - Additional eight level 5 patterns: `12435, 12453, 13245, 13254, 13425, 14235, 14325, 14352`  
 
-> **Note:** These level 5 patterns are included **only for sanity checks**. The computation is **not efficient** ($O(n^5)$) and is used to verify that all directions at level 5 can be spanned.  
+> **Note:** These level 5 patterns are included **only for sanity checks**. The computation is not efficient (simply the brute-force algorithm) and is used to verify that all directions at level 5 can be spanned.  
 > Any **eight linearly independent directions** at level 5 would suffice to cover all missing directions; these patterns are just one convenient choice.
 
 ---
