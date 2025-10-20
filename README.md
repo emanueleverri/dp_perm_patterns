@@ -17,11 +17,10 @@
 
 - **`profile_5.pkl`**  
   Basis expansions of patterns of **order 2, 3, 4, and 5**, using corner trees with up to **5 vertices**, plus:  
-  - Pattern `3214`  
   - Twelve double posets countable in \(\tilde{O}(n^{5/3})\)  
-  - Additional patterns: `12435, 12453, 13245, 13254, 13425, 14235, 14325, 14352`  
+  - Additional eight level 5 patterns filling the missing directions: `12435, 12453, 13245, 13254, 13425, 14235, 14325, 14352`  
 
-> **Note:** Level 5 patterns are included **only for sanity checks**. The computation is **not efficient** (O(n⁵)) and is used to verify that all directions at level 5 can be spanned.
+> **Note:** These eight level 5 patterns are included **only for sanity checks** to span the 120 directions. The computation is **not efficient** (O(n⁵)) and is used to verify that all directions at level 5 can be spanned.
 
 ---
 
