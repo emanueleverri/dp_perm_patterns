@@ -1,6 +1,8 @@
 # Efficient Counting of Permutation Patterns via Double Posets
 
-`dp_count_patterns.py` provides tools for efficiently counting permutation patterns using **double posets** and **corner trees**. Precomputed profiles (`profile_2.pkl` to `profile_5.pkl`) store basis expansions for patterns of various orders.
+`dp_count_patterns.py` provides tools for efficiently counting permutation patterns using **double posets**. Precomputed profiles (`profile_2.pkl` to `profile_5.pkl`) store basis expansions for patterns of various orders.  
+
+See the underlying paper for details: [*Efficient Counting of Permutation Patterns via Double Posets*](https://arxiv.org/abs/2408.08293).
 
 ---
 
@@ -17,10 +19,13 @@
 
 - **`profile_5.pkl`**  
   Basis expansions of patterns of **order 2, 3, 4, and 5**, using corner trees with up to **5 vertices**, plus:  
-  - Twelve double posets countable in \(\tilde{O}(n^{5/3})\)  
-  - Additional eight level 5 patterns filling the missing directions: `12435, 12453, 13245, 13254, 13425, 14235, 14325, 14352`  
+  - Pattern `3214`  
+  - Twelve double posets countable in \(\tilde{O}(n^{5/3})` – these correspond to the **three double posets in `Tree_{5/3}`** that can be counted in \(\tilde{O}(n^{5/3})\), together with all double posets obtained by the action of \(D_4\).  
+  - Additional eight level 5 patterns: `12435, 12453, 13245, 13254, 13425, 14235, 14325, 14352`  
 
-> **Note:** These eight level 5 patterns are included **only for sanity checks** to span the 120 directions. The computation is **not efficient** (O(n⁵)) and is used to verify that all directions at level 5 can be spanned.
+> **Note:** These level 5 patterns are included **only for sanity checks**. The computation is **not efficient** (O(n⁵)) and is used to verify that all directions at level 5 can be spanned.  
+> Any **eight linearly independent directions** at level 5 would suffice to cover all missing directions; these patterns are just one convenient choice.
+
 
 ---
 
