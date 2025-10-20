@@ -20,31 +20,28 @@ See the underlying paper for details: [*Efficient Counting of Permutation Patter
 - **`profile_5.pkl`**  
   Basis expansions of patterns of **order 2, 3, 4, and 5**, using corner trees with up to **5 vertices**, plus:  
   - Pattern `3214`  
-  - Twelve double posets countable in \(\tilde{O}(n^{5/3})` – these correspond to the three double posets in Tree_{5/3} that can be counted in \(\tilde{O}(n^{5/3})\), together with all double posets obtained by the action of \(D_4\).  
+  - Twelve double posets countable in $\tilde{O}(n^{5/3})$ – these correspond to the three double posets in $\text{Tree}_{5/3}$ that can be counted in $\tilde{O}(n^{5/3})$, together with all double posets obtained by the action of $D_4$.  
   - Additional eight level 5 patterns: `12435, 12453, 13245, 13254, 13425, 14235, 14325, 14352`  
 
-> **Note:** These level 5 patterns are included **only for sanity checks**. The computation is **not efficient** (O(n⁵)) and is used to verify that all directions at level 5 can be spanned.  
+> **Note:** These level 5 patterns are included **only for sanity checks**. The computation is **not efficient** ($O(n^5)$) and is used to verify that all directions at level 5 can be spanned.  
 > Any **eight linearly independent directions** at level 5 would suffice to cover all missing directions; these patterns are just one convenient choice.
-
 
 ---
 
 ## Functions
 
 - **`new_directions()`**  
-  Returns the three double posets in `Tree_{5/3}` that can be counted in \(\tilde{O}(n^{5/3})\), along with all double posets obtained by the action of \(D_4\). Outputs the **underlying pure west corner trees**.
+  Returns the three double posets in $\text{Tree}_{5/3}$ that can be counted in $\tilde{O}(n^{5/3})$, along with all double posets obtained by the action of $D_4$. Outputs the **underlying pure west corner trees**.
 
 - **`profile_level_two_with_ct(perm)`**  
-  Computes the **2-profile** of a permutation of length n in \(\tilde{O}(n)\) time.
+  Computes the **2-profile** of a permutation of length $n$ in $\tilde{O}(n)$ time.
 
 - **`profile_level_three_with_ct(perm)`**  
-  Computes the **3-profile** of a permutation of length n in \(\tilde{O}(n)\) time.
+  Computes the **3-profile** of a permutation of length $n$ in $\tilde{O}(n)$ time.
 
 - **`profile_level_four_with_ct(perm)`**  
-  Computes the **4-profile** of a permutation of length n in \(\tilde{O}(n^{5/3})\) time.
+  Computes the **4-profile** of a permutation of length $n$ in $\tilde{O}(n^{5/3})$ time.
 
 - **`profile_level_five_with_dp(perm, only_5=True)`**  
-  Computes the **5-profile** of a permutation of length n in **O(n⁵)** time.  
+  Computes the **5-profile** of a permutation of length $n$ in $O(n^5)$ time.  
   > ⚠️ **Warning:** This function is **intentionally inefficient** and is meant only as a **sanity check** for spanning all directions at level 5.
-
----
